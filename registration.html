@@ -1,0 +1,421 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+
+
+<!-- <style type="text/css">
+    
+    body{
+    background-color: #525252;
+}
+.centered-form{
+    margin-top: 60px;
+}
+
+.centered-form .panel{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+.container1{
+    width: 20%;
+    margin :auto ;
+}
+
+</style> -->
+
+
+
+<div ng-controller="myCtrl">
+
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+<div class="container1">
+<ul class="nav nav-pills">
+  <li class="active"><button ng-click="myFunc()">College</button></li>
+  <li><button ng-click="myFunc1()">University</button></li>
+</ul>
+</div>
+
+<div ng-show="showMe1">
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4
+        ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title">Registration for College Admin</h3>
+                        </div>
+                        <div class="panel-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                            <input type="checkbox" ng-click="underState()">Directly Under State<br>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                            <span>State :</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="form-group">
+                                        <select ng-model="selectedName" ng-options="x for x in names">
+                                </select>
+                                    </div>
+                                </div>
+
+                              <div ng-show="showMe3">  
+                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                         
+                            <span>University:</span>
+                                </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="form-group">
+                                        <select ng-model="selectedName" ng-options="x for x in names">
+                                </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Unique Id:</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="College Unique Id">
+                            </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                           Name:</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="text" name="college_name" id="email" class="form-control input-sm" placeholder="College Name">
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Email id :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                            </div>
+                            </div>
+
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Address :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
+                            </div>
+                            </div>
+
+
+                            </div>
+
+
+                            <div class="row">
+                             
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Contact Number :</span>
+                            </div>
+                            </div>
+                            
+                           
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="tel" name="phone" id="phine" class="form-control input-sm" placeholder="Contact Number">
+                            </div>
+                            </div>
+ 
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Website :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="url" name="website" id="website" class="form-control input-sm" placeholder="Website ">
+                            </div>
+                            </div>
+
+
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                           About :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="text" name="about" id="about" class="form-control input-sm" placeholder="About">
+                            </div>
+                            </div>
+
+
+
+
+
+
+                            </div>
+
+
+                            <div class="row">
+                               
+                                <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span><br>
+                            Password:</span>
+                            </div>
+                            </div>
+                            
+
+                            <div ng-controller="passCtrl">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type={{inputType}} name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                    </div>
+                                </div>
+
+                              <div class="col-xs-2 col-sm-2 col-md-2">
+                                    <div class="form-group">
+                                    
+                        <span class={{className}} ng-click ="hideShowPassword()" ></span>
+                                    </div>
+                                </div>
+                            </div>     
+                            </div>
+                            
+                            <input type="submit" value="Register" class="btn btn-info btn-block">
+                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+<div ng-show="showMe2">
+    <div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title">Registration for University</h3>
+                        </div>
+                        <div class="panel-body">
+                        <form role="form">
+                            <div class="row">
+                               
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                            <span>State :</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="form-group">
+                                        <select ng-model="selectedName" ng-options="x for x in names">
+                                </select>
+                                    </div>
+                                </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="form-group">
+                         
+                            <span>University:</span>
+                                </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="form-group">
+                                        <select ng-model="selectedName" ng-options="x for x in names">
+                                </select>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Unique Id:</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="College Unique Id">
+                            </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                           Name:</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="text" name="college_name" id="email" class="form-control input-sm" placeholder="College Name">
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Email id :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                            </div>
+                            </div>
+
+                            </div>
+  <div class="row">
+                             
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Contact Number :</span>
+                            </div>
+                            </div>
+                            
+                           
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="tel" name="phone" id="phine" class="form-control input-sm" placeholder="Contact Number">
+                            </div>
+                            </div>
+ 
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                            Website :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="url" name="website" id="website" class="form-control input-sm" placeholder="Website ">
+                            </div>
+                            </div>
+
+
+                             <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span>
+                           About :</span>
+                            </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <div class="col-xs-8 col-sm-8 col-md-8">    
+                                <input type="text" name="about" id="about" class="form-control input-sm" placeholder="About">
+                            </div>
+                            </div>
+
+
+
+
+
+
+                            </div>
+
+                            <div class="row">
+                               
+                                <div class="form-group">
+                            <div class="col-xs-4 col-sm-4 col-md-4">    
+                            <span><br>
+                            Password:</span>
+                            </div>
+                            </div>
+                            
+                            <div ng-controller="passCtrl">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type={{inputType}} name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                    </div>
+                                </div>
+
+                              <div class="col-xs-2 col-sm-2 col-md-2">
+                                    <div class="form-group">
+                                    
+                        <span class={{className}} ng-click ="hideShowPassword()" ></span>
+                                    </div>
+                                </div>
+                            </div>     
+                            </div>
+                            
+                            <input type="submit" value="Register" class="btn btn-info btn-block">
+                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+

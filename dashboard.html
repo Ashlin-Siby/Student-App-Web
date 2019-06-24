@@ -1,0 +1,64 @@
+
+<div class="container">
+
+<style>
+	
+	.par{
+		overflow: hidden;
+	}
+
+</style>
+
+<!-- 	<div class ="row well">  
+		<div class="col-sm-12">
+				Header
+		</div>
+	</div> -->
+	
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand " href="#">Student Mobile App</a>
+    </div>
+   <!--  <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="dashboard">Dashboard</a></li>
+      <li><a ui-sref=".profile">Profile</a></li>
+      <li><a ui-sref=".news">News</a></li>
+      <li><a ui-sref="#"></a></li>
+    </ul> -->
+  </div>
+</nav>
+
+	<div class ="row "> 
+		<div class="col-sm-3 well " style ="height:100%">  			<ul>
+			
+			 <li class="active"><a ui-sref="dashboard">Dashboard</a></li>
+
+			<li>
+			  <a ui-sref='.profile'>Profile</a>
+			</li>
+			<li>
+				<a ui-sref='.news'>News</a>
+			</li>
+				<li>
+				<a ui-sref='.course'>Courses</a>
+			</li>
+
+			</ul>
+			</div>
+
+		<!-- Main Pane -->
+		
+		<div class="col-sm-9 well par"> 
+					<!-- Welcome to the Students Mobile App!! --> 
+				<div ui-view >
+					
+					
+
+
+
+				</div>
+		</div>
+	</div>
+
+</div>
